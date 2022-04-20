@@ -1,19 +1,33 @@
 package developer.osmanforhad.recyclercardview;
 
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class MyAdaptar extends RecyclerView.Adapter<MyViewHolder> {
 
-    public MyAdaptar() {
+    //Define variable
+    ArrayList<String> CityNames;
+    Context c;
+
+    public MyAdaptar(Context c, ArrayList<String> CityNames) {
+        this.c = c;
+        this.CityNames = CityNames;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        //inflate the child view and pass into view holder
+        View v = LayoutInflater.from(c).inflate(R.layout.rowlayout, parent, false);
+        MyViewHolder VH = new MyViewHolder(v);
+        return VH;
     }
 
     @Override
