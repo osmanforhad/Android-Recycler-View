@@ -32,7 +32,8 @@ public class MyAdaptar extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
+        //bind array inside the ViewHolder by array position
+        holder.nameText.setText(CityNames.get(position));
     }
 
     @Override
