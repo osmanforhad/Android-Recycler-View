@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,6 +35,14 @@ public class MyAdaptar extends RecyclerView.Adapter<MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         //bind array inside the ViewHolder by array position
         holder.nameText.setText(CityNames.get(position));
+
+        //setup click event in every item
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(c, CityNames.get(position), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
